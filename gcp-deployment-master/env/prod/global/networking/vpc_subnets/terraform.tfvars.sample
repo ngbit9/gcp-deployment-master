@@ -1,0 +1,22 @@
+/* GLOBAL */
+project_id = "my-project-957-311307"
+region     = "us-central1"
+vpc_name   = "vpc001"
+
+/* Subnets */
+subnets = [
+  {
+    subnet_name           = "prod-pvt-us-ct1-subnet01"
+    subnet_ip             = "10.1.1.0/24"
+    subnet_region         = "us-central1"
+    subnet_private_access = "true"
+    subnet_flow_logs      = "false"
+  },
+  {
+    subnet_name           = "prod-pvt-us-ct1-subnet02"
+    subnet_ip             = "10.1.2.0/24"
+    subnet_region         = "us-central1"
+    subnet_private_access = "true"
+    subnet_flow_logs      = "false"
+  }
+]

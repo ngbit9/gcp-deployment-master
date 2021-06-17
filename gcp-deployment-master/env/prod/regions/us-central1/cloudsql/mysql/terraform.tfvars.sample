@@ -1,0 +1,23 @@
+project_id              = "prod-projectid"
+vpc_network             = "prod-projectid-vpc"
+region                  = "us-central1"
+instance_name           = "prod-projectid-postgresql-1"
+instance_type           = "db-custom-1-3840"
+instance_primary_zone   = "c"
+availability_type       = "REGIONAL"
+
+database_flags = [
+  {
+    name  = "autovacuum"
+    value = "off"
+  },
+]
+
+user_labels = {
+  owner = "cloud-team"
+}
+
+root_user = "root"
+root_password = "password"
+
+additional_users = []

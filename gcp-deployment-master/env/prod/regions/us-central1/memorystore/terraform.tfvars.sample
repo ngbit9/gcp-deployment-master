@@ -1,0 +1,21 @@
+#Global
+project = "searce-playground"
+region  = "us-central1"
+
+#Network
+
+location_id = "us-central1-a" // The zone where the instance will be provisioned
+alternative_location_id = "us-central1-c" // Only applicable to STANDARD_HA tier which protects the instance against zonal failures by provisioning it across two zones.
+
+authorized_network = "prod-onclusive-vpc" // Allow redis to communicate from your private network
+reserved_ip_range = "10.206.0.0/29" // The CIDR range of internal addresses that are reserved for this instance. It should not conflict with your existing network/subnetwork/onpremise.
+
+#Configuration
+
+tier = "STANDARD_HA" // It can be BASIC (standalone) / STANDARD_HA (highly available primary/replica instances)
+memory_size_gb = 10 // Redis memory size in GiB. 
+redis_version = "REDIS_5_0" // Version of your redis instance. It can be REDIS_5_0/REDIS_4_0/REDIS_3_2
+labels = {
+    project = "onclusive",
+    group = "apps"
+}

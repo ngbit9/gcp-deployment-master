@@ -1,0 +1,52 @@
+#Global
+project_id = "my-project-957-311307"
+region     = "us-central1"
+
+#Machine Details
+machine_type = "custom-4-8192"
+# machine_type = "n1-standard-2"
+
+#Network Interface
+network      = "client-prod-vpc"
+subnetwork   = "prod-pvt-us-ct1-subnet"
+network_tags = ["app-group"]
+
+# Boot disk info for all app group VMs
+boot_disk0_info = {
+  app_vm01 = {
+    disk_size_gb = 20
+    disk_type    = "pd-ssd"
+  },
+  app_vm02 = {
+    disk_size_gb = 20
+    disk_type    = "pd-ssd"
+  }
+}
+
+disk_snapshot_policy_name = "prod-projectid-app-disksnapshot-policy"
+
+#Labels
+instance_labels = {
+  env           = "prod"
+  group_name    = "app-group"
+  owner         = "admin"
+  app_name      = "app"
+  software_vers = "v1"
+}
+
+disk_labels = {
+  env        = "prod"
+  group_name = "app-group"
+}
+
+#Access scopes 
+service_account = {
+  email  = "prod-app-group-sa@my-project-957-311307.iam.gserviceaccount.com"
+  scopes = ["cloud-platform"]
+}
+
+
+
+## Stackdriver Alerting Values
+
+alert_policy_email_address = "test@test.com"

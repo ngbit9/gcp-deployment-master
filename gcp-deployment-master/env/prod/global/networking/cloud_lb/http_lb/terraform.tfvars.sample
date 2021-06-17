@@ -1,0 +1,11 @@
+
+project   = "my-project-957-311307"
+region       = "us-central1"
+vpc_name     = "vpc001"
+zone         = "us-central1-a"
+
+/* VPN Config */
+vpn_name                  = "prod-projectid-gcp-to-onprem-vpn"
+on_prem_router_ip         = "0.0.0.0"
+secret_key_phrase0        = "AxEGaknYCgNdjuyoqy/ex739dcfy8mT"  #change it
+secret_key_phrase1        = "MjxfzSwouud[puwr/ms9(wt5s7d&LPM"  #change it

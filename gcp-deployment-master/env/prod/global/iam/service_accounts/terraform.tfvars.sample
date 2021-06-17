@@ -1,0 +1,25 @@
+project_id = "my-project-957-311307"
+region     = "us-central1,us-west2,us-west3"
+
+
+
+service_account_app_group = {
+  service_account = "prod-app-group-sa"
+  role_name       = "prod_app_group_role"
+  permissions = [
+    "storage.buckets.list",
+    "storage.buckets.get",
+  ]
+}
+
+service_account_mgmt_group = {
+  service_account = "prod-mgmt-group-sa"
+  role_name       = "prod_mgmt_group_role"
+  permissions = [
+    "storage.buckets.list",
+    "storage.buckets.get",
+  ]
+}
+
+
+

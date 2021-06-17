@@ -1,0 +1,58 @@
+#Global
+project_id = "client-projectid"
+region     = "client-region"
+
+#Machine Details
+machine_type = "custom-2-4096"
+
+#Network Interface
+network      = "prod-client-vpc"
+subnetwork   = "prod-projectid-pub-us-ct1-subnet"
+network_tags = ["mgmt-group"]
+
+# Boot disk info for all mgmt group VMs
+boot_disk0_info = {
+  mgmt_vm01 = {
+    disk_size_gb = 30
+    disk_type    = "pd-standard"
+  },
+  mgmt_vm02 = {
+    disk_size_gb = 50
+    disk_type    = "pd-standard"
+  }
+}
+
+# Data disk info for all mgmt group VMs
+data_disk_mgmt_vm02_info = {
+  disk01 = {
+    disk_name    = "prod-projectid-mgmt-bastion-us-ct1-a-02-data01-disk"
+    disk_size_gb = 50
+    disk_type    = "pd-standard"
+  }
+}
+
+disk_snapshot_policy_name = "prod-projectid-mgmt-disksnapshot-policy"
+
+#Labels
+instance_labels = {
+  env        = "prod"
+  group_name = "mgmt-group"
+  owner      = "admin"
+  team       = "cloud"
+}
+
+disk_labels = {
+  env        = "prod"
+  group_name = "mgmt-group"
+}
+
+#Access scopes 
+service_account = {
+  email  = "prod-projectid-mgmt-group-sa@projectid.iam.gserviceaccount.com"
+  scopes = ["cloud-platform"]
+}
+
+ssh_keys = {
+  admin     = "../../../../resources/keys/admin-public.key",
+  superuser = "../../../../resources/keys/superuser-public.key"
+}

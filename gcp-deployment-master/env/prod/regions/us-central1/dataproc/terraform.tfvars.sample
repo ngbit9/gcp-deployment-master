@@ -1,0 +1,6 @@
+project_id              = "prod-projectid"
+network                 = "prod-projectid-vpc"
+subnetwork              = "prod-projectid-vpc-subnet"
+region                  = "us-central1"
+zone                    = "us-central1-c"
+network_tags            = ["prod_dataproc"]
